@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">小酒保</string>
+    <color name="clr_normal">#800060ff</color>
+    <color name="clr_pressed">#800000ff</color>
+    <color name="clr_putword">#000000</color>
+    <color name="clr_onword">#999999</color>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bottom_navtgariton">BottomNavtgaritonActivity</string>
+    <string name="title_home">首页</string>
+    <string name="title_order">订单</string>
+    <string name="title_cart">购物车</string>
+    <string name="title_pcenter">个人</string>
+</resources>
