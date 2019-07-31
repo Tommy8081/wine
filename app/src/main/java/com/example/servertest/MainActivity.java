@@ -1,18 +1,19 @@
 package com.example.servertest;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -26,25 +27,26 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.net.URLEncoder;
+
 
 public class MainActivity extends AppCompatActivity {
-    private TextView textView;
     private EditText LogInput,RegInput;
     private Button RegButton;
-    public static Activity mActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView= (TextView) findViewById(R.id.textView);
         LogInput = (EditText) findViewById(R.id.LogInput);
         RegInput = (EditText) findViewById(R.id.RegInput);
         Button button= (Button) findViewById(R.id.LogButton);
         RegButton = (Button) findViewById(R.id.RegButton);
+
+
         Intent intent = getIntent();
         String str1 = intent.getStringExtra("str1");
-        Log.d("------------", "run: "+str1);
+
+
         if(str1!=null){Toast.makeText(MainActivity.this,str1,Toast.LENGTH_LONG).show();}
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 String str1 = result.toString ();
+
                 if(str1.equals( "登录成功！")){
                   Intent intent = new Intent ( MainActivity.this,BottomNavtgaritonActivity.class );
                   startActivity ( intent );
